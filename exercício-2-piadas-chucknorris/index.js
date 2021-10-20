@@ -12,6 +12,8 @@ app.get('/', (_req, res) => res.redirect('/categories'));
 
 app.get('/categories', categoriesController.listCategories);
 
+app.get('/jokes/:category', categoriesController.getJokeByCategory);
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
